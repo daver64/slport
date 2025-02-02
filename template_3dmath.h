@@ -64,11 +64,11 @@ inline T normalise_deg(T angle)
 		angle += 360.0;
 	return angle;
 }
-template <typename T = int32_t>
-inline double normalise_deg(T angle)
-{
-	return normalise_deg((double)angle);
-}
+//template <typename T = int32_t>
+//inline double normalise_deg(T angle)
+//{
+//	return (double)normalise_deg((double)angle);
+//}
 
 template <typename T = double_t>
 inline T normalize_rad(T angle)
@@ -314,14 +314,14 @@ public:
 		};
 		struct
 		{
-			T h, p, b, w;
+			T h, p, b, s;
 		};
 		struct
 		{
-			T width, height, depth, w;
+			T width, height, depth, t;
 		};
 	};
-	Vec3() : x(0), y(0), z(0), w(0) {}
+	//Vec3() : x(0), y(0), z(0), w(0) {}
 	Vec3(const Vec2<T> v) : x(v.x), y(v.y), z(0), w(0) {}
 	Vec3(const Vec3<T> &v = Vec3<T>(0, 0, 0)) : x(v.x), y(v.y), z(v.z), w(0) {}
 	Vec3(const T dat[3]) : x(dat[0]), y(dat[1]), z(dat[2]), w(0) {}
